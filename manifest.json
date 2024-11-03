@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Summarize It All",
+  "version": "1.0",
+  "description": "Summarize It All is a Chrome extension that summarizes articles, posts and emails for you.",
+  "permissions": [  
+    "activeTab",
+    "contextMenus"
+],
+"host_permissions": [
+  "<all_urls>"
+],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["config.js", "content.js"],
+      "type": "module"
+    }
+  ],
+  "action":{
+    "default_icon": "assets/Logo.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
